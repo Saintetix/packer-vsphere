@@ -32,17 +32,17 @@ ansible_username="ansible"
 
 # Packer Logging
 while true; do
-    read -r -p "Enable logging for Packer? (y/n): " enable_logging_input
+    read -r enable_logging_input\?"Enable logging for Packer? (y/n): "
     case $enable_logging_input in
     [yY][eE][sS] | [yY])
         enable_logging=true
         while true; do
-            read -r -p "Enable log to file? (y/n): " enable_log_path_input
+            read -r enable_log_path_input\?"Enable log to file? (y/n): "
             case $enable_log_path_input in
             [yY][eE][sS] | [yY])
                 enable_log_path=true
                 while true; do
-                    read -r -p "Enter the log path (e.g. /tmp/packer/): " log_dir_input
+                    read -r log_dir_input\?"Enter the log path (e.g. /tmp/packer/): "
                     if [[ -n "$log_dir_input" ]]; then
                         if test -d "$log_dir_input"; then
                             log_dir="$log_dir_input"
@@ -83,11 +83,11 @@ done
 
 # vSphere Credentials
 echo -e '\n> Set the vSphere credentials.'
-read -r -p "Enter the FQDN of your vCenter Server instance: " vsphere_endpoint
-read -r -p "Enter the username for the user account: " vsphere_username
-read -r -s -p "Enter the password for the user account: " vsphere_password
+read -r vsphere_endpoint\?"Enter the FQDN of your vCenter Server instance: "
+read -r vsphere_username\?"Enter the username for the user account: "
+read -r -s vsphere_password\?"Enter the password for the user account: "
 echo # Needed for line break.
-read -r -p "Skip vCenter Server instance SSL verification? (y/n): " skip_ssl_verification
+read -r skip_ssl_verification\?"Skip vCenter Server instance SSL verification? (y/n): "
 case $skip_ssl_verification in
 [yY][eE][sS] | [yY])
 	vsphere_insecure_connection=true
@@ -102,52 +102,52 @@ esac
 
 # vSphere Settings
 echo -e '\n> Set the vSphere settings.'
-read -r -p "Enter the vSphere datacenter name: " vsphere_datacenter
-read -r -p "Enter the vSphere cluster name: " vsphere_cluster
-read -r -p "Enter the ESXi host FQDN or IP: " vsphere_host
-read -r -p "Enter the datastore name virtual machines: " vsphere_datastore
-read -r -p "Enter the network name: " vsphere_network
-read -r -p "Enter the folder name: " vsphere_folder
-read -r -p "Enter the resource pool name: " vsphere_resource_pool
-read -r -p "Set the host for datastore uploads (recommended: ""${vsphere_set_host_for_datastore_uploads}""): " vsphere_set_host_for_datastore_uploads
-read -r -p "Enter the content library name: " common_content_library_name
-read -r -p "Enter the datastore name for .iso files: " common_iso_datastore
+read -r vsphere_datacenter\?"Enter the vSphere datacenter name: "
+read -r vsphere_cluste\?"Enter the vSphere cluster name: "
+read -r vsphere_host\?"Enter the ESXi host FQDN or IP: "
+read -r vsphere_datastore\?"Enter the datastore name virtual machines: "
+read -r vsphere_network\?"Enter the network name: "
+read -r vsphere_folder\?"Enter the folder name: "
+read -r vsphere_resource_pool\?"Enter the resource pool name: "
+read -r vsphere_set_host_for_datastore_uploads\?"Set the host for datastore uploads (recommended: ""${vsphere_set_host_for_datastore_uploads}""): "
+read -r common_content_library_name\?"Enter the content library name: "
+read -r common_iso_datastore\?"Enter the datastore name for .iso files: " common_iso_datastore
 
 echo -e '\n> Set the common virtual machine settings.'
 # Virtual Machine Settings
-read -r -p "Enter the virtual hardware version (recommended: ""${common_vm_version}""): " common_vm_version
-read -r -p "Enable VMware Tools upgrade (recommended: ""${common_tools_upgrade_policy}""): " common_tools_upgrade_policy
-read -r -p "Remove CD-ROMs (recommended: ""${common_remove_cdrom}""): " common_remove_cdrom
+read -r common_vm_version\?"Enter the virtual hardware version (recommended: ""${common_vm_version}""): "
+read -r common_tools_upgrade_policy\?"Enable VMware Tools upgrade (recommended: ""${common_tools_upgrade_policy}""): "
+read -r common_remove_cdrom\?"Remove CD-ROMs (recommended: ""${common_remove_cdrom}""): "
 echo -e '\n> Set the common template and content library settings.'
 # Template and Content Library Settings
-read -r -p "Convert to a template (recommended: ""${common_template_conversion}""): " common_template_conversion
-read -r -p "Export OVF Template to the content library (recommended: ""${common_content_library_ovf}""): " common_content_library_ovf
-read -r -p "Destroy virtual machine artifact (recommended: ""${common_content_library_destroy}""): " common_content_library_destroy
-read -r -p "Skip export to content library (recommended: ""${common_content_library_skip_export}""): " common_content_library_skip_export
+read -r common_template_conversion\?"Convert to a template (recommended: ""${common_template_conversion}""): "
+read -r common_content_library_ovf\?"Export OVF Template to the content library (recommended: ""${common_content_library_ovf}""): "
+read -r common_content_library_destroy\?"Destroy virtual machine artifact (recommended: ""${common_content_library_destroy}""): "
+read -r common_content_library_skip_export\?"Skip export to content library (recommended: ""${common_content_library_skip_export}""): "
 echo -e '\n> Set the common OVF export settings.'
 # OVF Export Settings
-read -r -p "Export as an OVF artifact (recommended: ""${common_ovf_export_enabled}""): " common_ovf_export_enabled
-read -r -p "Overwrite an existing OVF artifact (recommended: ""${common_ovf_export_overwrite}""): " common_ovf_export_overwrite
+read -r common_ovf_export_enabled\?"Export as an OVF artifact (recommended: ""${common_ovf_export_enabled}""): "
+read -r common_ovf_export_overwrite\?"Overwrite an existing OVF artifact (recommended: ""${common_ovf_export_overwrite}""): "
 echo -e '\n> Set the common boot and provisioning settings.'
 # Boot and Provisioning Settings
-read -r -p "Set the provisioning datasource (recommended: ""${common_data_source}""): " common_data_source
-read -r -p "Enter the IP address of the interface on this host: " common_http_ip
-read -r -p "Enter the starting HTTP port (recommended: ""${common_http_port_min}""): " common_http_port_min
-read -r -p "Enter the ending HTTP port (recommended: ""${common_http_port_max}""): " common_http_port_max
-read -r -p "Enter the IP wait timeout (recommended: ""${common_ip_wait_timeout}""): " common_ip_wait_timeout
-read -r -p "Enter the IP settle timeout (recommended: ""${common_ip_settle_timeout}""): " common_ip_settle_timeout
-read -r -p "Enter the virtual machine shutdown timeout (recommended: ""${common_shutdown_timeout}""): " common_shutdown_timeout
+read -r common_data_source\?"Set the provisioning datasource (recommended: ""${common_data_source}""): "
+read -r common_http_ip\?"Enter the IP address of the interface on this host: "
+read -r common_http_port_min\?"Enter the starting HTTP port (recommended: ""${common_http_port_min}""): "
+read -r common_http_port_max\?"Enter the ending HTTP port (recommended: ""${common_http_port_max}""): "
+read -r common_ip_wait_timeout\?"Enter the IP wait timeout (recommended: ""${common_ip_wait_timeout}""): "
+read -r common_ip_settle_timeout\?"Enter the IP settle timeout (recommended: ""${common_ip_settle_timeout}""): "
+read -r common_shutdown_timeout\?"Enter the virtual machine shutdown timeout (recommended: ""${common_shutdown_timeout}""): "
 
 # Proxy Credentials
 echo -e '\n> Set proxy credentials.'
-read -r -p "Use SOCKS Proxy? (y/n): " use_socks_proxy
+read -r use_socks_proxy\?"Use SOCKS Proxy? (y/n): "
 case $use_socks_proxy in
 [yY][eE][sS] | [yY])
 	echo '> Set the proxy credentials.'
-	read -r -p "Enter the FQDN/IP of the proxy: " communicator_proxy_host
-	read -r -p "Enter the port for the proxy: " communicator_proxy_port
-	read -r -p "Enter the username for the proxy: " communicator_proxy_username
-	read -r -s -p "Enter the password for the proxy: " communicator_proxy_password
+	read -r communicator_proxy_host\?"Enter the FQDN/IP of the proxy: "
+	read -r communicator_proxy_port\?"Enter the port for the proxy: "
+	read -r communicator_proxy_username\?"Enter the username for the proxy: "
+	read -r -s communicator_proxy_password\?"Enter the password for the proxy: "
 	echo
 	;;
 [nN][oO] | [nN]) ;;
@@ -159,35 +159,35 @@ esac
 
 # Default Account Credentials
 echo -e '\n> Set the default user account credentials.'
-read -r -p "Enter the username for the account: " build_username
-read -r -s -p "Enter the password for the account: " build_password
+read -r build_username\?"Enter the username for the account: "
+read -r -s build_password\?"Enter the password for the account: "
 echo # Needed for line break.
-read -r -s -p "Enter the SHA-512 encrypted password for the account: " build_password_encrypted
+read -r -s build_password_encrypted\?"Enter the SHA-512 encrypted password for the account: "
 echo # Needed for line break.
-read -r -s -p "Enter the key for the account: " build_key
+read -r -s build_key\?"Enter the key for the account: "
 echo # Needed for line break.
 
 # Ansible Credentials
 echo -e '\n> Set the Ansible credentials.'
-read -r -p "Enter the username for the account: " ansible_username
-read -r -s -p "Enter the key for the account: " ansible_key
+read -r ansible_username\?"Enter the username for the account: "
+read -r -s ansible_key\?"Enter the key for the account: "
 echo # Needed for line break.
 
 # Red Hat Subscription Manager Credentials
 echo -e '\n> Set the RedHat Subscription Manager credentials.'
-read -r -p "Enter the username for the account: " rhsm_username
-read -r -s -p "Enter the password for the account: " rhsm_password
+read -r rhsm_username\?"Enter the username for the account: "
+read -r -s rhsm_password\?"Enter the password for the account: "
 echo # Needed for line break.
 
 # SUSE Customer Center Credentials
 echo -e '\n> Set the SUSE Customer Center credentials.'
-read -r -p "Enter the email for the account: " scc_email
-read -r -s -p "Enter the code for the account: " scc_code
+read -r scc_email\?"Enter the email for the account: "
+read -r -s scc_code\?"Enter the code for the account: "
 echo # Needed for line break.
 
 # HCP Packer
 echo -e '\n> Set the HCP Packer registry.'
-read -r -p "Enable the HCP Packer registry: " common_hcp_packer_registry_enabled
+read -r common_hcp_packer_registry_enabled\?"Enable the HCP Packer registry: "
 echo # Needed for line break.
 
 # Packer Logging
@@ -300,7 +300,7 @@ echo '> Setting the HCP Packer...'
 export PKR_VAR_common_hcp_packer_registry_enabled="${common_hcp_packer_registry_enabled}"
 echo
 
-read -r -p "Display the environment variables? (y/n): " display_environmental_variables
+read -r display_environmental_variables\?"Display the environment variables? (y/n): "
 case $display_environmental_variables in
 [yY][eE][sS] | [yY])
 
