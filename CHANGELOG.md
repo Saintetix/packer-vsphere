@@ -1,8 +1,45 @@
 # Release History
 
+## v0.20.0
+
+> Release Date: Not Released
+
+**Enhancement**:
+
+- Adds Ubuntu Server 24.04 LTS to the project.
+  [#891](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/891)
+- Adds a script (`./download.sh`) and a configuration (`project.json`) to assist in the download of
+  the guest operating systems.
+  [#874](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/874),
+  [#877](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/877)
+- Adds option to enable cloud-init on Debian 12.
+  [#883](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/883)
+- Adds option to enable cloud-init on Red Hat Enterprise Linux 9.
+  [#888](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/888)
+- Adds option to enable cloud-init on Red Hat Enterprise Linux 8.
+  [#888](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/888)
+- Adds option to enable cloud-init on Rocky Linux 9.
+  [#895](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/895)
+- Adds option to enable cloud-init on Rocky Linux 8.
+  [#895](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/895)
+
+**Chore**:
+
+- Removes Ubuntu Server 23.10 from the project; superseded by 24.04 LTS.
+  [#891](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/891)
+
+## v0.19.1
+
+> Release Date: 2024-04-15
+
+**Bug Fix**:
+
+- Removes the PowerShell provisioner for Windows 11 and 10 as it's not required after the transition
+  to Ansible. [#878](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/878)
+
 ## v0.19.0
 
-> Release Date: Unreleased
+> Release Date: 2024-04-09
 
 **Enhancement**:
 
@@ -172,8 +209,8 @@
 - Removes Ubuntu 18.04 from the project.
   [#578](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/578)
 
-    On 31 May 2023, Ubuntu 18.04 LTS reached the end of standard support. See
-    [Ubuntu Lifecycle](https://ubuntu.com/about/release-cycle) for more information.
+  On 31 May 2023, Ubuntu 18.04 LTS reached the end of standard support. See
+  [Ubuntu Lifecycle](https://ubuntu.com/about/release-cycle) for more information.
 
 - Updates Red Hat Enterprise Linux 9 to 9.2 release.
   [#576](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/576),

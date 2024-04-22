@@ -3,7 +3,7 @@
 
 /*
     DESCRIPTION:
-    Ubuntu Server 23.10 build definition.
+    Ubuntu Server 24.04 LTS build definition.
     Packer Plugin for VMware vSphere: 'vsphere-iso' builder.
 */
 
