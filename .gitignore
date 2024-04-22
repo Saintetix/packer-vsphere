@@ -72,3 +72,9 @@ venv/
 # MkDocs documentation
 ## Ignore site directory.
 .site/
+
+# Env file
+.env
+
+# Packer dir
+.packer.d/*
