@@ -56,5 +56,6 @@
     "editor.formatOnType": true,
     "editor.trimAutoWhitespace": true,
     "editor.wordWrap": "off"
-  }
+  },
+  "ansible.python.interpreterPath": "/bin/python3"
 }
