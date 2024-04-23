@@ -33,10 +33,6 @@
 # Tasks for configuring cloud-init.
 - name: "Configuring cloud-init."
   block:
-    - name: "Delete cloud-init.disabled file"
-      ansible.builtin.file:
-        path: /etc/cloud/cloud-init.disabled
-        state: absent
     - name: "Message: Configuring cloud-init"
       debug:
         msg: "Configuring cloud-init"
@@ -47,6 +43,7 @@
         - /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg
         - /etc/cloud/cloud.cfg.d/99-installer.cfg
         - /etc/cloud/cloud.cfg.d/90-installer-network.cfg
+        - /etc/cloud/cloud-init.disabled
         - /etc/netplan/00-installer-config.yaml
       when: ansible_distribution == 'Ubuntu'
     - blockinfile:
