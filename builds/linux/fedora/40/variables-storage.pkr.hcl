@@ -3,7 +3,7 @@
 
 /*
     DESCRIPTION:
-    CentOS Stream 8 storage variables.
+    Fedora Server 40 storage variables.
     Packer Plugin for VMware vSphere: 'vsphere-iso' builder.
 */
 

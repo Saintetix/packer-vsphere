@@ -3,7 +3,7 @@
 
 /*
     DESCRIPTION:
-    CentOS Stream 8 variables used by the Packer Plugin for VMware vSphere (vsphere-iso).
+    CentOS Stream 9 variables used by the Packer Plugin for VMware vSphere (vsphere-iso).
 */
 
 // Guest Operating System Metadata
@@ -12,10 +12,10 @@ vm_guest_os_keyboard = "us"
 vm_guest_os_timezone = "UTC"
 vm_guest_os_family   = "linux"
 vm_guest_os_name     = "centos-stream"
-vm_guest_os_version  = "8"
+vm_guest_os_version  = "9"
 
 // Virtual Machine Guest Operating System Setting
-vm_guest_os_type = "centos8_64Guest"
+vm_guest_os_type      = "other5xLinux64Guest"
 vm_guest_os_cloudinit = false
 
 // Virtual Machine Hardware Settings
@@ -34,8 +34,8 @@ vm_network_card          = "vmxnet3"
 
 // Removable Media Settings
 iso_datastore_path       = "iso/linux/centos"
-iso_content_library_item = "CentOS-Stream-8-x86_64-latest-dvd1"
-iso_file                 = "CentOS-Stream-8-x86_64-latest-dvd1.iso"
+iso_content_library_item = "CentOS-Stream-9-latest-x86_64-dvd1"
+iso_file                 = "CentOS-Stream-9-latest-x86_64-dvd1.iso"
 
 // Boot Settings
 vm_boot_order = "disk,cdrom"

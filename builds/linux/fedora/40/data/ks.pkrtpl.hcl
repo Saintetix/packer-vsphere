@@ -1,7 +1,7 @@
 # Copyright 2023-2024 Broadcom. All rights reserved.
 # SPDX-License-Identifier: BSD-2
 
-# CentOS Stream 8
+# Fedora Server 40
 
 ### Installs from the first attached CD-ROM/DVD on the system.
 cdrom
@@ -68,9 +68,7 @@ skipx
 ### Post-installation commands.
 %post
 dnf makecache
-dnf install epel-release -y
-dnf makecache
-dnf install -y sudo open-vm-tools perl
+dnf install -y sudo open-vm-tools perl python3-libselinux
 %{ if additional_packages != "" ~}
 dnf install -y ${additional_packages}
 %{ endif ~}

@@ -1,17 +1,41 @@
 # Release History
 
+## v0.21.0
+
+> Not Released
+
+**Bug Fix**:
+
+- Updates to debian.yml file to remove the disable flag on cloud-init for ubuntu 24.04 LTS version
+  [#940](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/940)
+
+
 ## v0.20.0
 
-> Release Date: Not Released
+> Release Date: 2024-05-29
+
+**Bug Fix**:
+
+- Updates Windows Desktop Enterprise Edition to support the default use of evaluation mode.
+  [#908](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/908)
+
+  **Note**: Professional Edition does not support evaluation mode. Microsoft Evaluation Center only
+  provides support for Enterprise Edition. Please see the
+  [FAQ](https://vmware-samples.github.io/packer-examples-for-vsphere/getting-started/faq/) for
+  additional details.
 
 **Enhancement**:
 
-- Adds Ubuntu Server 24.04 LTS to the project.
-  [#891](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/891)
-- Adds a script (`./download.sh`) and a configuration (`project.json`) to assist in the download of
-  the guest operating systems.
+- Adds a download script (`./download.sh`) and a JSON configuration file (`project.json`) to assist
+  in the download of the guest operating systems.
   [#874](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/874),
   [#877](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/877)
+- Refactored the build script (`./build.sh`) to provide the same experience as the download script.
+  [#910](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/910)
+- Adds Ubuntu Server 24.04 LTS to the project.
+  [#891](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/891)
+- Adds Fedora Server 40 Linux distribution to the project.
+  [#xxx](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/xxx)
 - Adds option to enable cloud-init on Debian 12.
   [#883](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/883)
 - Adds option to enable cloud-init on Red Hat Enterprise Linux 9.
@@ -38,11 +62,31 @@
   [#900](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/900)
 - Adds option to enable cloud-init on VMware Photon OS 5.
   [#900](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/900)
+- Adds option to enable cloud-init on SUSE Enterprise Linux 15.
+  [#910](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/919)
 
 **Chore**:
 
+- Updates Red Hat Enterprise Linux 9 to 9.4 release.
+  [#925](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/925)
+- Updates Oracle Linux 9 to 9.4 release.
+  [#927](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/927)
+- Updates Almalinux 9 to 9.4 release.
+  [#927](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/927)
+- Updates Rocky Linux 9 to 9.4 release.
+  [#927](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/927)
+- Removes CentOS Stream 8 from the project.
+
+  On 31 May 2024, CentOS Stream 8 reached the end of life.
+
 - Removes Ubuntu Server 23.10 from the project; superseded by 24.04 LTS.
   [#891](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/891)
+- Updates `required_plugins` for `packer-plugin-vsphere` to `>= 1.3.0`.
+- Updates `required_versions` for `terraform` to `>= 1.8.3`.
+- Updates `required_versions` for `hashicorp/vsphere` to `>= 2.8.1`.
+- Updates `required_versions` for `hashicorp/hcp` to `>= 0.89.0`.
+- Update ansible-core version from 2.15 to 2.16.
+  [#921](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/921)
 
 ## v0.19.1
 
@@ -748,7 +792,7 @@
 - Updates Microsoft Windows `autounattend.xml` files to use the attached VMware Tools `.iso` for
   PVSCSI driver.
 - Simplified and reduced the script files used by provisioners.
-- Patches the script for VNware Photon OS 4 due to an issue performing updates with `tdnf`.
+- Patches the script for VMware Photon OS 4 due to an issue performing updates with `tdnf`.
 - Patches the script for Ubuntu Server 20.04 LTS to remove cloud-init and remove all netplan
   configurations before GuestOS customization.
 - Removes support for VMware Photon OS 3 machine image builds.

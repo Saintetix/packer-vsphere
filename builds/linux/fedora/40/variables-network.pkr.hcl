@@ -3,7 +3,7 @@
 
 /*
     DESCRIPTION:
-    CentOS Stream 8 network variables.
+    Fedora Server 40 network variables.
     Packer Plugin for VMware vSphere: 'vsphere-iso' builder.
 */
 

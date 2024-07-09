@@ -3,7 +3,8 @@
 
 /*
     DESCRIPTION:
-    CentOS Stream 8 variables using the Packer Builder for VMware vSphere (vsphere-iso).
+    Fedora Server 40 input variables.
+    Packer Plugin for VMware vSphere: 'vsphere-iso' builder.
 */
 
 //  BLOCK: variable

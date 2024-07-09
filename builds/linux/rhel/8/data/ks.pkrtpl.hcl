@@ -1,7 +1,7 @@
 # Copyright 2023-2024 Broadcom. All rights reserved.
 # SPDX-License-Identifier: BSD-2
 
-# Red Hat Enterprise Linux Server 8
+# Red Hat Enterprise Linux 8
 
 ### Installs from the first attached CD-ROM/DVD on the system.
 cdrom

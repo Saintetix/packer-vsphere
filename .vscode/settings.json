@@ -1,4 +1,7 @@
 {
+  // Ansible settings
+  "ansible.python.interpreterPath": "/usr/local/bin/python3",
+
   // Editor settings
   "editor.bracketPairColorization.enabled": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -42,7 +45,7 @@
   "[md]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnType": true,
     "editor.trimAutoWhitespace": true,
     "editor.wordWrap": "bounded",

@@ -3,7 +3,8 @@
 
 /*
     DESCRIPTION:
-    CentOS Stream 9 template using the Packer Builder for VMware vSphere (vsphere-iso).
+    Fedora Server 40 build definition.
+    Packer Plugin for VMware vSphere: 'vsphere-iso' builder.
 */
 
 //  BLOCK: packer
@@ -14,7 +15,7 @@ packer {
   required_plugins {
     vsphere = {
       source  = "github.com/hashicorp/vsphere"
-      version = ">= 1.2.7"
+      version = ">= 1.3.0"
     }
     ansible = {
       source  = "github.com/hashicorp/ansible"
@@ -82,7 +83,7 @@ locals {
 //  BLOCK: source
 //  Defines the builder configuration blocks.
 
-source "vsphere-iso" "linux-centos-stream" {
+source "vsphere-iso" "linux-fedora" {
 
   // vCenter Server Endpoint Settings and Credentials
   vcenter_server      = var.vsphere_endpoint
@@ -195,7 +196,7 @@ source "vsphere-iso" "linux-centos-stream" {
 //  Defines the builders to run, provisioners, and post-processors.
 
 build {
-  sources = ["source.vsphere-iso.linux-centos-stream"]
+  sources = ["source.vsphere-iso.linux-fedora"]
 
   provisioner "ansible" {
     user                   = var.build_username
@@ -205,7 +206,7 @@ build {
     roles_path             = "${path.cwd}/ansible/roles"
     ansible_env_vars = [
       "ANSIBLE_CONFIG=${path.cwd}/ansible/ansible.cfg",
-      "ANSIBLE_PYTHON_INTERPRETER=/usr/libexec/platform-python"
+      "ANSIBLE_PYTHON_INTERPRETER=/usr/bin/python3"
     ]
     extra_arguments = [
       "--extra-vars", "display_skipped_hosts=false",

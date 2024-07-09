@@ -5,7 +5,7 @@ SPDX-License-Identifier: BSD-2
 
 <!-- markdownlint-disable first-line-h1 no-inline-html -->
 
-<img src="docs/assets/images/icon-color.svg" alt="VMware vSphere" width="100">
+<img src="docs/assets/images/icon-color.svg" alt="VMware vSphere" width="150">
 
 # Packer Examples for VMware vSphere
 
@@ -43,6 +43,7 @@ This project supports the following guest operating systems:
 | CentOS Stream                | 9         |
 | CentOS Stream                | 8         |
 | CentOS Linux                 | 7         |
+| Fedora Server                | 39        |
 | SUSE Linux Enterprise Server | 15        |
 
 ## Microsoft Windows

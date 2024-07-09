@@ -3,7 +3,8 @@
 
 /*
     DESCRIPTION:
-    CentOS Stream 9 variables used by the Packer Plugin for VMware vSphere (vsphere-iso).
+    Fedora Server 40 build variables.
+    Packer Plugin for VMware vSphere: 'vsphere-iso' builder.
 */
 
 // Guest Operating System Metadata
@@ -11,11 +12,11 @@ vm_guest_os_language = "en_US"
 vm_guest_os_keyboard = "us"
 vm_guest_os_timezone = "UTC"
 vm_guest_os_family   = "linux"
-vm_guest_os_name     = "centos-stream"
-vm_guest_os_version  = "9"
+vm_guest_os_name     = "fedora"
+vm_guest_os_version  = "40"
 
 // Virtual Machine Guest Operating System Setting
-vm_guest_os_type = "other5xLinux64Guest"
+vm_guest_os_type      = "fedora64Guest"
 vm_guest_os_cloudinit = false
 
 // Virtual Machine Hardware Settings
@@ -33,9 +34,9 @@ vm_disk_thin_provisioned = true
 vm_network_card          = "vmxnet3"
 
 // Removable Media Settings
-iso_datastore_path       = "iso/linux/centos"
-iso_content_library_item = "CentOS-Stream-9-latest-x86_64-dvd1"
-iso_file                 = "CentOS-Stream-9-latest-x86_64-dvd1.iso"
+iso_datastore_path       = "iso/linux/fedora"
+iso_content_library_item = "Fedora-Server-dvd-x86_64-40-1.14"
+iso_file                 = "Fedora-Server-dvd-x86_64-40-1.14.iso"
 
 // Boot Settings
 vm_boot_order = "disk,cdrom"
