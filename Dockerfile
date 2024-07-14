@@ -11,12 +11,19 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y packer
 
-RUN apt-get update; \
-    apt-get install -y gcc python3; \
-    apt-get install -y python3-pip; \
-    apt-get clean all
-RUN pip3 install --upgrade pip; \
-    pip3 install "ansible==${ANSIBLE_VERSION}"; \
-    pip3 install ansible
+ENV ANSIBLE_VERSION 2.9.17
+RUN apt update; \
+    apt install -y gcc python3; \
+    apt install -y python3-pip; \
+    apt install -y python3-full; \
+    apt install -y python3.12-venv; \
+    apt clean all
+
+RUN mkdir /root/ansiblevenv; \
+    python3 -m venv /root/ansiblevenv; \
+    /root/ansiblevenv/bin/pip3 install --upgrade pip; \
+    /root/ansiblevenv/bin/pip3 install "ansible==${ANSIBLE_VERSION}"; \
+    /root/ansiblevenv/bin/pip3 install ansible
 
 CMD ["/bin/sh"]
+
