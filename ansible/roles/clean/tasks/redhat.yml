@@ -88,3 +88,12 @@
   ansible.builtin.file:
     path: "{{ ansible_env.HOME }}/.bash_history"
     state: absent
+
+# Tasks to clean the install logs.
+- name: Cleaning the install logs.
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - /root/anaconda-ks.cfg
+    - /root/original-ks.cfg

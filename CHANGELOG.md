@@ -2,13 +2,33 @@
 
 ## v0.21.0
 
-> Not Released
+> Release Date: Not Released
 
 **Bug Fix**:
 
-- Updates to debian.yml file to remove the disable flag on cloud-init for ubuntu 24.04 LTS version
+- Updates to `debian.yml` file to remove the disable flag on cloud-init for Ubuntu 24.04 LTS version.
   [#940](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/940)
+- Updates to `debian.yml` file to fix cloud-init install issue and additional package issue.
+  [#944](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/944)
+- Fixes issue when using `http` data source with a static IP address and the kickstart file could not
+  be sent from Packer host.
+  [#959](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/959)
 
+**Enhancement**:
+
+- Updates `pkr.hcl.example` and `variables.pkr.hcl` with defaults.
+  [#944](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/944),
+  [#945](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/945)
+
+**Chore**:
+
+- Removes Red Hat Enterprise Linux 7 from the project.
+  [#944](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/944)
+
+  On 30 June 2024, Red Hat Enterprise Linux 7 reached the end of life.
+
+- Updates Rocky Linux 8.9 to 8.10 release.
+  [#944](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/944)
 
 ## v0.20.0
 
@@ -76,6 +96,10 @@
 - Updates Rocky Linux 9 to 9.4 release.
   [#927](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/927)
 - Removes CentOS Stream 8 from the project.
+- Updates Almalinux 8.9 to 8.10 release.
+  [#956](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/956)
+- Updates Oracle Linux 8.9 to 8.10.
+  [#956](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/956)
 
   On 31 May 2024, CentOS Stream 8 reached the end of life.
 

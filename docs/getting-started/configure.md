@@ -220,8 +220,8 @@ Edit the `builds/vsphere.pkrvars.hcl` file to configure the following:
 Edit each `config/<type>-<build>-<version>.pkrvars.hcl` files to configure the following virtual
 machine hardware settings, as required:
 
-```hcl linenums="1" title="config/linux-photon-5.pkrvars.hcl" hl_lines="1 6 9 13 27 32 36"
---8<-- "./builds/linux/ubuntu/24-04-lts/linux-ubuntu.pkrvars.hcl.example:10:100"
+```hcl linenums="1" title="config/linux-photon-5.pkrvars.hcl" hl_lines="1 5 8 11"
+--8<-- "./builds/linux/photon/5/linux-photon.pkrvars.hcl.example:10:100"
 ```
 
 ???+ note
@@ -231,6 +231,13 @@ machine hardware settings, as required:
     - [VMware Paravirtual SCSI controller][vmware-pvscsi] storage device
     - [VMXNET 3][vmware-vmxnet3] network card device
     - EFI Secure Boot firmware
+    - Cloud Init
+    - CD-ROM Type
+    - CD-ROM Count
+    - CPU Core and Count
+    - Memory size
+    - Disk Drive Size
+    - Communicator Port (22 SSH, 5985 RDP)
 
 ### Linux Specific
 
@@ -239,7 +246,7 @@ machine hardware settings, as required:
 Edit the `config/linux-<build>-<version>.pkrvars.hcl` file to configure the additional packages to
 be installed on the Linux guest operating system during the build.
 
-```hcl title="config/linux-photon-5.pkrvars.hcl"
+```hcl title="config/linux-ubuntu.pkrvars.hcl"
 // Additional Settings
 additional_packages = ["git", "make", "vim"]
 ```

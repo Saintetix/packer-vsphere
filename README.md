@@ -33,7 +33,6 @@ This project supports the following guest operating systems:
 | Ubuntu Server                | 20.04 LTS |
 | Red Hat Enterprise Linux     | 9         |
 | Red Hat Enterprise Linux     | 8         |
-| Red Hat Enterprise Linux     | 7         |
 | AlmaLinux OS                 | 9         |
 | AlmaLinux OS                 | 8         |
 | Rocky Linux                  | 9         |
@@ -42,7 +41,6 @@ This project supports the following guest operating systems:
 | Oracle Linux                 | 8         |
 | CentOS Stream                | 9         |
 | CentOS Stream                | 8         |
-| CentOS Linux                 | 7         |
 | Fedora Server                | 39        |
 | SUSE Linux Enterprise Server | 15        |
 
